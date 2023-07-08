@@ -2,7 +2,6 @@ import os
 import json
 import pandas as pd
 
-
 class JsonFetch:
     def __init__(self, folder_path):
         self.folder_path = folder_path
@@ -38,3 +37,4 @@ class JsonFetch:
         df["Year"] = df["Year"].astype("category")
         df["Pincode"] = df["Pincode"].astype("category")
         return df
+        
