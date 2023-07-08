@@ -41,5 +41,4 @@ class JsonProcessor:
         df["State"] = df["State"].astype("category")
         df["Year"] = df["Year"].astype("category")
         df["Transaction_type"] = df["Transaction_type"].astype("category")
-
         return df
