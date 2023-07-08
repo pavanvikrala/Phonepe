@@ -40,3 +40,4 @@ class JsonSearch:
         df["Year"] = df["Year"].astype("category")
         df["District"] = df["District"].astype("category")
         return df
+        
