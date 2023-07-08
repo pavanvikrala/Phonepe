@@ -44,11 +44,11 @@ class JsonExtract:
 
         df = pd.DataFrame(self.clm)
         df['Count'].fillna(0, inplace=True)
-        df["Brand"].fillna("Others", inplace=True)
-        df['Percentage'].fillna(0, inplace=True)
+        df.dropna(subset=["Brand"], inplace=True)
+        df.dropna(subset=["Percentage"], inplace=True)
         df["State"] = df["State"].astype("category")
         df["Year"] = df["Year"].astype("category")
-        df["Count"] = df["Count"].astype("int")
+        df["Count"] = df["Count"].astype("float")
         df["Brand"] = df["Brand"].astype("category")
         df["Percentage"] = (df["Percentage"]*100).map('{:.2f}'.format).astype(float).astype(int)
         return df
