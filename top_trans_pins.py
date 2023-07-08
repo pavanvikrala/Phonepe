@@ -37,8 +37,8 @@ class JsonDig:
                                 self.clm['Quarter'].append(int(quarter.strip('.json')))
 
         df = pd.DataFrame(self.clm)
-        df["Pincode"].fillna(0, inplace=True)
         df["State"] = df["State"].astype("category")
         df["Year"] = df["Year"].astype("category")
+        df.dropna(inplace=True)
         df["Pincode"] = df["Pincode"].astype("category")
         return df
