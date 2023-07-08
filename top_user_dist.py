@@ -2,7 +2,6 @@ import os
 import json
 import pandas as pd
 
-
 class JsonData:
     def __init__(self, folder_path):
         self.folder_path = folder_path
@@ -38,3 +37,4 @@ class JsonData:
         df["Year"] = df["Year"].astype("category")
         df["District"] = df["District"].astype("category")
         return df
+        
